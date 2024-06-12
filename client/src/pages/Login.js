@@ -9,11 +9,11 @@ const Login = () => {
     "https://images.unsplash.com/photo-1593538312308-d4c29d8dc7f1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80";
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  //from submit
+  //from submit 
   const submitHandler = async (values) => {
     try {
       setLoading(true);
-      const { data } = await axios.post("http://localhost:8080/api/v1/users/login", values);
+      const { data } = await axios.post(`${window.location.origin}/api/v1/users/login`, values);
       setLoading(false);
       message.success("login success");
       localStorage.setItem(
